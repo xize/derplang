@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>DerpLang</groupId>
-  <artifactId>tv.mineinthebox.derpang</artifactId>
+  <groupId>tv.mineinthebox.derplang</groupId>
+  <artifactId>derplang</artifactId>
   <version>0.4-SNAPSHOT</version>
   <name>DerpLang</name>
   <description>Derplang a random program what tranlates normal texts into very weird ones
