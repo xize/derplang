@@ -71,7 +71,7 @@ public class Util {
 	public static String toDemon(String s) {
 		String message = "";
 		char[] chrs = s.toCharArray();
-		for(int i = (chrs.length-1); i > 0; i--) {
+		for(int i = (chrs.length-1); i > -1; i--) {
 			message += chrs[i];
 		}
 		return message;
