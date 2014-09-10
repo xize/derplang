@@ -10,15 +10,18 @@ import javax.swing.SwingUtilities;
 
 public class Main {
 	
-	public final static String version = "0.4a";
+	public final static String version = "0.5";
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 
 				JFrame frame = new MainFrame("DerpLang " + version + " - written by Xeph0re");
-				frame.setSize(400, 600);
+				frame.pack();
+				frame.setLocationRelativeTo(null);
+				frame.setSize(500, 600);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				//frame.setLocation(100, 100);
 				frame.setVisible(true);
 				Image img = null;
 				try {
