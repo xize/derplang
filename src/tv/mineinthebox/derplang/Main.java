@@ -10,13 +10,12 @@ import javax.swing.SwingUtilities;
 
 public class Main {
 	
-	public final static String version = "0.5";
+	public final static String version = "0.5b";
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-
-				JFrame frame = new MainFrame("DerpLang " + version + " - written by Xeph0re");
+				JFrame frame = new Handler("DerpLang " + version + " - written by Xeph0re");
 				frame.pack();
 				frame.setLocationRelativeTo(null);
 				frame.setSize(500, 600);

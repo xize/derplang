@@ -18,6 +18,8 @@ public class Gui {
 	private JButton reset;
 	private JButton copy;
 	private JCheckBox check;
+	private JCheckBox allwindows;
+	private JLabel allwindowslab;
 	private JLabel label;
 	private JLabel brand;
 	
@@ -66,13 +68,16 @@ public class Gui {
 		this.reset = new JButton("reset");
 		this.copy = new JButton("copy");
 		this.check = new JCheckBox();
-		
 		this.label = new JLabel("change order");
+		this.allwindows = new JCheckBox();
+		this.allwindowslab = new JLabel("in all windows? (F6)");
 		p2.add(convert);
 		p2.add(reset);
 		p2.add(copy);
 		p2.add(check);
 		p2.add(label);
+		p2.add(allwindows);
+		p2.add(allwindowslab);
 		return p2;
 	}
 	
@@ -248,5 +253,23 @@ public class Gui {
 	 */
 	public JLabel getCapsCheckBoxLabel() {
 		return capslab;
+	}
+	
+	/**
+	 * @author xize
+	 * @param returns the all windows checkbox
+	 * @return JCheckBox
+	 */
+	public JCheckBox getAllWindowsCheckBox() {
+		return allwindows;
+	}
+	
+	/**
+	 * @author xize
+	 * @param returns the label for the all windows
+	 * @return JLabel
+	 */
+	public JLabel getAllWindowsLabel() {
+		return allwindowslab;
 	}
 }

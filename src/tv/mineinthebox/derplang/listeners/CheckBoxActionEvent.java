@@ -46,5 +46,10 @@ public class CheckBoxActionEvent implements ActionListener {
 		} else {
 			gui.getLeetSpeakCheckBoxLabel().setForeground(Color.BLACK);
 		}
+		if(gui.getAllWindowsCheckBox().isSelected()) {
+			gui.getAllWindowsLabel().setForeground(new Color(0x005826));
+		} else {
+			gui.getAllWindowsLabel().setForeground(Color.BLACK);
+		}
 	}
 }

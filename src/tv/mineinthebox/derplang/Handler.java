@@ -7,22 +7,36 @@ import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.jnativehook.GlobalScreen;
+import org.jnativehook.NativeHookException;
+
 import tv.mineinthebox.derplang.listeners.CheckBoxActionEvent;
 import tv.mineinthebox.derplang.listeners.ConvertActionEvent;
 import tv.mineinthebox.derplang.listeners.CopyActionEvent;
+import tv.mineinthebox.derplang.listeners.LabelAllWindowsEvent;
 import tv.mineinthebox.derplang.listeners.LabelBreezEvent;
 import tv.mineinthebox.derplang.listeners.LabelCapsEvent;
 import tv.mineinthebox.derplang.listeners.LabelDemonEvent;
 import tv.mineinthebox.derplang.listeners.LabelLeetEvent;
 import tv.mineinthebox.derplang.listeners.LabelOrderMouseEvent;
+import tv.mineinthebox.derplang.listeners.NativeKeysEvent;
 import tv.mineinthebox.derplang.listeners.ResetActionEvent;
 
-public class MainFrame extends JFrame {
+public class Handler extends JFrame {
 
 	private static final long serialVersionUID = 1523041262132767056L;
 
-	public MainFrame(String title) {
+	public Handler(String title) {
 		super(title);
+		
+		if(!GlobalScreen.isNativeHookRegistered()) {
+			try {
+				GlobalScreen.registerNativeHook();
+			} catch (NativeHookException e) {
+				GlobalScreen.unregisterNativeHook();
+			}
+		}
+		
 		Container c = getContentPane();
 		Gui gui = new Gui();
 		JPanel textboxes = gui.generateTextBoxes();
@@ -53,5 +67,14 @@ public class MainFrame extends JFrame {
 		
 		gui.getCapsCheckBox().addActionListener(new CheckBoxActionEvent(gui));
 		gui.getCapsCheckBoxLabel().addMouseListener(new LabelCapsEvent(gui));
+		
+		gui.getAllWindowsCheckBox().addActionListener(new CheckBoxActionEvent(gui));
+		gui.getAllWindowsLabel().addMouseListener(new LabelAllWindowsEvent(gui));
+		
+		if(GlobalScreen.isNativeHookRegistered()) {
+			GlobalScreen.getInstance().addNativeKeyListener(new NativeKeysEvent(gui));
+		} else {
+			System.out.print("failed to load native hooks, reason unknown.");
+		}
 	}
 }
