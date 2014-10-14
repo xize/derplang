@@ -114,7 +114,7 @@ public class Gui {
 	 */
 	public JPanel generateBrandBox() {
 		JPanel p3 = new JPanel();
-		this.brand = new JLabel("© DerpLang " + Main.version + " made by Xeph0re from mitb.tv 2014 - 2015");
+		this.brand = new JLabel("\u00A9 DerpLang " + Main.version + " made by Xeph0re from mitb.tv 2014 - 2015");
 		this.brand.setForeground(new Color(0xacacac));
 		p3.add(brand);
 		return p3;
